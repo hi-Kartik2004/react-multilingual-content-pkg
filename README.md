@@ -39,6 +39,8 @@ A light package that provides a component to translate a website's content prese
     .custom-select {
       background: gray;
       color: black;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
     }
   ```
 
