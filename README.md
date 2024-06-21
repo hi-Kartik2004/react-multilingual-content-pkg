@@ -57,7 +57,7 @@ You can always add wrapper divs or pass this component as props to other functio
 
 
 ### Coming Up in Next version
-You can pass in array of langauges you wanna show as options in the select element, for users to shift the content on the page to.
+You can pass in array of langauges you wanna show as options in the select element, for users to shift the content of the page to.
 
 
 
