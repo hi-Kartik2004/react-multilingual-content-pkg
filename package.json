@@ -1,0 +1,31 @@
+{
+  "name": "react-multilingual-content",
+  "description": "A light package that provides a component to translate a website in english/native language into other languages",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "react",
+    "multilingual-translator",
+    "website-language-translate",
+    "translate-website-languages"
+  ],
+  "author": "Kartikeya Saini",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2"
+  }
+}
