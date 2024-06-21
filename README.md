@@ -17,7 +17,7 @@ A light package that provides a component to translate a website's content prese
     <GoogleTranslator className="max-w-[150px]" />
   ```
 ## How to style?
-  ### className
+  ### 1. className
   You can style the unstyled GoogleTranslator Component, just like any other element in your application, by passing in className={`classnames here`}
   Example:
   ```js
@@ -25,7 +25,7 @@ A light package that provides a component to translate a website's content prese
   ```
   The styles specified by the classes passed with the `prop className` are applied to the wrapper div.
 
-  ### selectClassName
+  ### 2. selectClassName
   You can style the select present inside the wrapper div by passing in classNames to the `selectClassName prop`
   Example:
   ```js
