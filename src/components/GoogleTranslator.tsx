@@ -3,6 +3,7 @@ import "./GoogleTranslator.scss";
 
 type Props = {
   className?: string;
+  selectClassName?: string;
 };
 
 declare global {
@@ -19,7 +20,7 @@ declare global {
   }
 }
 
-const GoogleTranslator: React.FC<Props> = ({ className }) => {
+const GoogleTranslator: React.FC<Props> = ({ className, selectClassName }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -50,8 +51,8 @@ const GoogleTranslator: React.FC<Props> = ({ className }) => {
 
     addGoogleTranslateScript();
     setLoading(false);
+
     return () => {
-      // Cleanup: Remove the script from the DOM to prevent memory leaks
       const existingScript = document.getElementById(scriptId);
       if (existingScript) {
         document.body.removeChild(existingScript);
@@ -59,13 +60,18 @@ const GoogleTranslator: React.FC<Props> = ({ className }) => {
     };
   }, [loading]);
 
+  useEffect(() => {
+    const selectElement = document.querySelector(
+      "#google_translate_element select"
+    );
+    if (selectElement && selectClassName) {
+      selectElement.classList.add(selectClassName);
+    }
+  }, [selectClassName]);
+
   if (loading) return <p>Loading...</p>;
 
-  return (
-    <>
-      <div id="google_translate_element" className={className}></div>
-    </>
-  );
+  return <div id="google_translate_element" className={className}></div>;
 };
 
 export default GoogleTranslator;
