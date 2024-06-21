@@ -45,7 +45,7 @@ A light package that provides a component to translate a website's content prese
 ### Others
 You can always add wrapper divs or pass this component as props to other functions, make sure to keep in mind the Component has a wrapper div, so to prevent hydration issues, `don't use` this component inside `<p></p> or <span></span>` and rest other hydration prevention rules apply.
 
-### Component Structure
+### GoogleTranslator Component Structure
 ![image](https://github.com/hi-Kartik2004/react-multilingual-content-pkg/assets/111000515/395ccf97-6702-4157-a20c-03f57721b0b4)
 
 ## Screenshots
