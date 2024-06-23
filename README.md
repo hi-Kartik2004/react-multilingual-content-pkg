@@ -6,6 +6,9 @@ A light package that provides a component to translate a website's content prese
   npm i react-multilingual-content
 ```
 
+## Tutorial
+Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc
+
 ## How to use?
   ### Import
   This component needs to be on the `client side` if you're using Next.js
