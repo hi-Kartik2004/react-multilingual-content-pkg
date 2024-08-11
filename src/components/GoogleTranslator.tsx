@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./GoogleTranslator.scss";
 
 type Props = {
   className?: string;
   selectClassName?: string;
-  languages?: string[]; // Update type to string[]
 };
 
 declare global {
@@ -21,20 +20,15 @@ declare global {
   }
 }
 
-const GoogleTranslator: React.FC<Props> = ({
-  className,
-  selectClassName = "testing",
-  languages = [],
-}) => {
+const GoogleTranslator: React.FC<Props> = ({ className, selectClassName }) => {
   const [loading, setLoading] = useState(true);
-  const observerRef = useRef<MutationObserver | null>(null);
-  console.log(languages);
 
   useEffect(() => {
+    setLoading(true);
     const scriptId = "google-translate-script";
 
     const addGoogleTranslateScript = () => {
-      if (!document.getElementById(scriptId)) {
+      if (!document.getElementById(scriptId) && !loading) {
         const script = document.createElement("script");
         script.id = scriptId;
         script.src =
@@ -49,83 +43,31 @@ const GoogleTranslator: React.FC<Props> = ({
               "google_translate_element"
             );
           };
-          setLoading(false);
         };
 
         document.body.appendChild(script);
-      } else {
-        // Script already exists, initialize immediately
-        if (window.google && window.google.translate) {
-          window.googleTranslateElementInit();
-          setLoading(false);
-        }
       }
     };
 
-    let selectElement = document.querySelector<HTMLSelectElement>(
-      "#google_translate_element select"
-    );
-
-    if (selectElement) {
-      document.body.removeChild(selectElement);
-    }
-
     addGoogleTranslateScript();
-
-    // Set up a MutationObserver to watch for changes in the DOM
-    observerRef.current = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === "childList") {
-          const selectElement = document.querySelector<HTMLSelectElement>(
-            "#google_translate_element select"
-          );
-          if (
-            selectElement &&
-            !selectElement.classList.contains(selectClassName)
-          ) {
-            let selectClassNameArray = new Set<string>();
-
-            let classArray = selectClassName.trim().split(/\s+/);
-            classArray.forEach((className) =>
-              selectClassNameArray.add(className)
-            );
-
-            if (selectElement) {
-              selectClassNameArray.forEach((className) => {
-                selectElement.classList.add(className);
-              });
-
-              // Hide unwanted language options
-              if (languages.length > 0) {
-                const options =
-                  selectElement.querySelectorAll<HTMLOptionElement>("option");
-                options.forEach((option) => {
-                  if (languages.indexOf(option.value) === -1) {
-                    option.classList.add("hidden");
-                  }
-                });
-              }
-            }
-            observerRef.current?.disconnect();
-          }
-        }
-      });
-    });
-
-    // Start observing the document with the configured parameters
-    observerRef.current.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+    setLoading(false);
 
     return () => {
       const existingScript = document.getElementById(scriptId);
       if (existingScript) {
         document.body.removeChild(existingScript);
       }
-      observerRef.current?.disconnect();
     };
-  }, [selectClassName, languages]);
+  }, [loading]);
+
+  useEffect(() => {
+    const selectElement = document.querySelector(
+      "#google_translate_element select"
+    );
+    if (selectElement && selectClassName) {
+      selectElement.classList.add(selectClassName);
+    }
+  }, [selectClassName]);
 
   if (loading) return <p>Loading...</p>;
 
