@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./GoogleTranslator.scss";
+import React, { useEffect, useState } from "react";
+// import "./GoogleTranslator.scss";
 
 type Props = {
   className?: string;
@@ -60,14 +60,13 @@ const GoogleTranslator: React.FC<Props> = ({ className, selectClassName }) => {
     };
   }, [loading]);
 
-  useEffect(() => {
-    const selectElement = document.querySelector(
-      "#google_translate_element select"
-    );
-    if (selectElement && selectClassName) {
-      selectElement.classList.add(selectClassName);
-    }
-  }, [selectClassName]);
+  const style = document.createElement("style");
+  document.head.appendChild(style);
+  // background-color: #f1f1f1; 
+  style.textContent = `.goog-te-combo{
+    ${selectClassName}
+  }`
+
 
   if (loading) return <p>Loading...</p>;
 

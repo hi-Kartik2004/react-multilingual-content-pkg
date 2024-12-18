@@ -2,7 +2,7 @@
   "name": "react-multilingual-content",
   "description": "A light package that provides a component to translate a website's content present in english/native language into other languages.",
   "type": "module",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
