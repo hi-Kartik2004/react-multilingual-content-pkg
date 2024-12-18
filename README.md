@@ -2,6 +2,7 @@
 A light package that provides a component to translate a website's content present in english/native language into other languages.
 
 > V 2.0 Update: There is a change in the way select styles are handled now. (Fixes the older issue of styles being lost on re-render)
+> Refer new examples ![here](#2-selectstyles)
 
 ## Installation
 ```js
@@ -9,7 +10,8 @@ A light package that provides a component to translate a website's content prese
 ```
 
 ## Tutorial
-Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc
+Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc (outdated)
+> Refer the example syntax ![below](#2-selectstyles)
 
 ## How to use?
   ### Import
@@ -30,9 +32,10 @@ Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc
   ```
   The styles specified by the classes passed with the `prop className` are applied to the wrapper div.
 
-  ### 2. selectClassName
-  You can style the select present inside the wrapper div by passing in classNames to the `selectClassName prop`
-  Example:
+  ### 2. selectStyles
+  You can style the select present inside the wrapper div by passing in styles as string to the `selectStyles` prop
+
+  Example 1:
   ```js
   // pass in selectStyles to apply styles on the select element (follow vanilla js syntax)
    <GoogleTranslator
