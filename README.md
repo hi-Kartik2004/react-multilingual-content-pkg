@@ -2,7 +2,7 @@
 A light package that provides a component to translate a website's content present in english/native language into other languages.
 
 > V 2.0 Update: There is a change in the way select styles are handled now. (Fixes the older issue of styles being lost on re-render)
-> Refer new examples ![here](#2-selectstyles)
+> Refer new examples [here](#2-selectstyles)
 
 ## Installation
 ```js
@@ -11,7 +11,7 @@ A light package that provides a component to translate a website's content prese
 
 ## Tutorial
 Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc (outdated)
-> Refer the example syntax ![below](#2-selectstyles)
+> Refer the example syntax [below](#2-selectstyles)
 
 ## How to use?
   ### Import
