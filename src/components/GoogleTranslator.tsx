@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "./GoogleTranslator.scss";
+import "./GoogleTranslator.scss";
 
 type Props = {
   className?: string;
