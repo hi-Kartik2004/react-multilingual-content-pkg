@@ -39,6 +39,15 @@ Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc
     />
   ```
 
+  Example 2:
+  ```js
+  // pass multiple selectStyles as a string to apply styles on the select element (follow vanilla js syntax)
+   <GoogleTranslator
+        className="max-w-[200px]"
+        selectStyles="background-color: gray; color: yellow; border: 2px solid black;"
+    />
+  ```
+
 ### Others
 You can always add wrapper divs or pass this component as props to other functions, make sure to keep in mind the Component has a wrapper div, so to prevent hydration issues, `don't use` this component inside `<p></p> or <span></span>` and other hydration prevention rules apply.
 
