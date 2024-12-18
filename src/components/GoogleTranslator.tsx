@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 type Props = {
   className?: string;
-  selectClassName?: string;
+  selectStyles?: string;
 };
 
 declare global {
@@ -20,7 +20,7 @@ declare global {
   }
 }
 
-const GoogleTranslator: React.FC<Props> = ({ className, selectClassName }) => {
+const GoogleTranslator: React.FC<Props> = ({ className, selectStyles }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const GoogleTranslator: React.FC<Props> = ({ className, selectClassName }) => {
   document.head.appendChild(style);
   // background-color: #f1f1f1; 
   style.textContent = `.goog-te-combo{
-    ${selectClassName}
+    ${selectStyles}
   }`
 
 
