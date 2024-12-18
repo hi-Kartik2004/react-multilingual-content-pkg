@@ -1,6 +1,8 @@
 # React Multilingual Content Package
 A light package that provides a component to translate a website's content present in english/native language into other languages.
 
+> V 2.0 Update: There is a change in the way select styles are handled now. (Fixes the older issue of styles being lost on re-render)
+
 ## Installation
 ```js
   npm i react-multilingual-content
