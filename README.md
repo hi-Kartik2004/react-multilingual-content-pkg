@@ -32,23 +32,15 @@ Youtube link: https://www.youtube.com/watch?v=F18wgoV9ulc
   You can style the select present inside the wrapper div by passing in classNames to the `selectClassName prop`
   Example:
   ```js
+  // pass in selectStyles to apply styles on the select element (follow vanilla js syntax)
    <GoogleTranslator
         className="max-w-[200px]"
-        selectClassName="custom-select"
+        selectStyles="background-color: gray"
     />
-  ```
-  #### In your css file
-  ```css
-    .custom-select {
-      background: gray;
-      color: black;
-      padding: 0.5rem;
-      border-radius: 0.25rem;
-    }
   ```
 
 ### Others
-You can always add wrapper divs or pass this component as props to other functions, make sure to keep in mind the Component has a wrapper div, so to prevent hydration issues, `don't use` this component inside `<p></p> or <span></span>` and rest other hydration prevention rules apply.
+You can always add wrapper divs or pass this component as props to other functions, make sure to keep in mind the Component has a wrapper div, so to prevent hydration issues, `don't use` this component inside `<p></p> or <span></span>` and other hydration prevention rules apply.
 
 ### GoogleTranslator Component Structure
 ![image](https://github.com/hi-Kartik2004/react-multilingual-content-pkg/assets/111000515/5e0ee39b-45d9-4317-82dd-062935d0be0c)
